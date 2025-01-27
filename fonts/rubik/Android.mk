@@ -25,7 +25,7 @@ LOCAL_SRC_FILES := $(call all-subdir-java-files)
 
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
 
-LOCAL_PACKAGE_NAME := FontRubikOverlay
+LOCAL_PACKAGE_NAME := FontRubikOverlay2
 LOCAL_SDK_VERSION := current
 
 include $(BUILD_RRO_PACKAGE)
