@@ -16,10 +16,13 @@ PRODUCT_PACKAGE_OVERLAYS += $(VENDOR_EXTRA_PATH)/overlay/common
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(VENDOR_EXTRA_PATH)/overlay/common
 
 # Extra Font Overlays
-PRODUCT_PACKAGES += \
-    FontJetBrainsMono \
-    FontLatoOverlay \
-    FontRubikOverlay
+# Add a check to avoid duplicate addition other one comes from vendor/lineage/config/common_mobile_full.mk
+ifneq ($(filter FontLatoOverlay, $(PRODUCT_PACKAGES)), FontLatoOverlay)
+    PRODUCT_PACKAGES += \
+        FontJetBrainsMono \
+        FontLatoOverlay \
+        FontRubikOverlay
+endif
 
 # Add font families to fonts-customization.xml
 ADDITIONAL_FONTS_FILE += \
